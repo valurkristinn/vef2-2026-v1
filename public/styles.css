@@ -1,1 +1,5 @@
 /* útfæra */
+main {
+    width: max(90vw, 1200px);
+    margin: auto;
+}

@@ -1,11 +1,7 @@
-export function parseQuestions() {
-  return 'test';
-}
 
 
 
-
-export function parseLine(line) {
+function parseLine(line) {
     const split = line.split(',');
 
     const q = {
@@ -18,3 +14,17 @@ export function parseLine(line) {
     }
     return q;
 }
+
+
+function parseContent(content) {
+    const lines = content.split('\n');
+    const questions = lines.map(parseLine);
+    return questions;
+}
+
+
+export function parseQuestions(content) {
+  return parseContent(content);
+}
+
+

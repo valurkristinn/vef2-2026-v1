@@ -1,7 +1,5 @@
-
-
-export function template(title, body) {
-    return `
+function generateTemplateHtml(title, body) {
+  return `
     <!DOCTYPE html>
     <html lang="is">
       <head>
@@ -17,46 +15,40 @@ export function template(title, body) {
     </html>`;
 }
 
-
-export function index(categories) {
-    return `
-        <section class="index">
-            <h1>Spurningavefur Vals</h1>
-            <p>Hér má finna alls kyns spurningar! veldu frá</p>
-            <ul>
-                ${categories.map(( category )=>(`
-                    <li><a href="${ category }.html">${category}</a></li>
-                    `
-                ))}
-            </ul>
-        </section>`
+export function generateIndexHtml(title, categories, slugs) {
+  const html = `
+    <section class="index">
+      <h1>spurningavefur vals</h1>
+      <p>hér má finna alls kyns spurningar! veldu frá</p>
+      <ul>
+        ${categories.map((category, i) => `
+          <li><a href="${slugs[i]}.html">${category}</a></li>
+        `).join("")}
+      </ul>
+    </section>
+    `;
+  return generateTemplateHtml(title, html);
 }
 
-export function questionCard(q) {
-    return`
+function generateQuestionCardHtml(q) {
+  return `
     <div class="card-front">
         <h3>${q.question}?</h3>
         <h4>Erfiðleikastig: ${q.difficulty}</h4>
         <p>Smelltu til að sjá svarið!</p>
     </div>
     <div class="card-back">
-        <h3>${q.answer}?</h3>
-    </div>`
+        <h3>${q.answer}</h3>
+    </div>`;
 }
 
-
-export function categoryIndex(category, questions) {
-    return `
+export function generateCategoryIndexHtml(categoryTitle, questions) {
+  const html = `
         <section class="category">
-            <h1>${category}</h1>
-            ${questions.map((q) => (
-                questionCard(q)
-            ))}
+            <h1>${categoryTitle}</h1>
+            ${questions.map((q) => generateQuestionCardHtml(q)).join("")}
         </section>
-    `
+    `;
+
+  return generateTemplateHtml(categoryTitle, html);
 }
- 
-
-
-
-
