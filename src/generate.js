@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import { parseQuestions } from "./lib/parse.js";
 import { generateIndexHtml, generateCategoryIndexHtml } from "./lib/html.js";
 
-const Max_QUESTIONS_PER_CATEGORY = 100;
+const MAX_QUESTIONS_PER_CATEGORY = 100;
 const TARGET_DIR = "./dist";
 
 const categories = [
@@ -51,8 +51,10 @@ async function main() {
   // búa til output möppu
   await fs.mkdir(TARGET_DIR, { recursive: true });
 
+  //* temporary
   fs.copyFile("public/styles.css", "dist/styles.css");
   fs.copyFile("public/scripts.js", "dist/scripts.js");
+  //*
 
   // sækja gögn
   const content = await fs.readFile("./questions.csv", "utf-8");
@@ -70,7 +72,7 @@ async function main() {
 
     fy(categoryQuestions);
 
-    const outputQuestions = categoryQuestions.slice(0, Max_QUESTIONS_PER_CATEGORY);
+    const outputQuestions = categoryQuestions.slice(0, MAX_QUESTIONS_PER_CATEGORY);
 
     const output = generateCategoryIndexHtml(categories[i], outputQuestions);
 

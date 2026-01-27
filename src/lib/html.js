@@ -32,21 +32,25 @@ export function generateIndexHtml(title, categories, slugs) {
 
 function generateQuestionCardHtml(q) {
   return `
+  <div class="card">
     <div class="card-front">
-        <h3>${q.question}?</h3>
-        <h4>Erfiðleikastig: ${q.difficulty}</h4>
-        <p>Smelltu til að sjá svarið!</p>
+      <h4>Erfiðleikastig: ${q.difficulty}</h4>
+      <h3>${q.question}?</h3>
+      <p>Smelltu til að sjá svarið!</p>
     </div>
     <div class="card-back">
-        <h3>${q.answer}</h3>
-    </div>`;
+      <h3>${q.answer}</h3>
+    </div>
+  </div>
+    `;
 }
 
 export function generateCategoryIndexHtml(categoryTitle, questions) {
   const html = `
-        <section class="category">
-            <h1>${categoryTitle}</h1>
-            ${questions.map((q) => generateQuestionCardHtml(q)).join("")}
+        <a href="index.html" class="back"> Til baka</a>
+        <h1>${categoryTitle}</h1>
+        <section class="questions">
+          ${questions.map((q) => generateQuestionCardHtml(q)).join("")}
         </section>
     `;
 
