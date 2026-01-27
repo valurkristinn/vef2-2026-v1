@@ -51,10 +51,7 @@ async function main() {
   // búa til output möppu
   await fs.mkdir(TARGET_DIR, { recursive: true });
 
-  //* temporary
-  fs.copyFile("public/styles.css", "dist/styles.css");
-  fs.copyFile("public/scripts.js", "dist/scripts.js");
-  //*
+  
 
   // sækja gögn
   const content = await fs.readFile("./questions.csv", "utf-8");
