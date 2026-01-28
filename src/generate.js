@@ -51,8 +51,6 @@ async function main() {
   // búa til output möppu
   await fs.mkdir(TARGET_DIR, { recursive: true });
 
-  
-
   // sækja gögn
   const content = await fs.readFile("./questions.csv", "utf-8");
   const questions = parseQuestions(content);

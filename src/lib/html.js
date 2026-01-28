@@ -6,7 +6,7 @@ function generateTemplateHtml(title, body) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="styles.css" />
-        <script type="module" src="script.js"></script>
+        <script type="module" src="scripts.js"></script>
         <title>${title}</title>
       </head>
       <body>
@@ -32,7 +32,7 @@ export function generateIndexHtml(title, categories, slugs) {
 
 function generateQuestionCardHtml(q) {
   return `
-  <div class="card">
+  <button type="button" class="card" aria-label="Snúa við">
     <div class="card-front">
       <h4>Erfiðleikastig: ${q.difficulty}</h4>
       <h3>${q.question}?</h3>
@@ -41,7 +41,7 @@ function generateQuestionCardHtml(q) {
     <div class="card-back">
       <h3>${q.answer}</h3>
     </div>
-  </div>
+  </button>
     `;
 }
 
