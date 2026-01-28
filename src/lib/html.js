@@ -5,6 +5,9 @@ function generateTemplateHtml(title, body) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&disgf play=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css" />
         <script type="module" src="scripts.js"></script>
         <title>${title}</title>
@@ -18,8 +21,8 @@ function generateTemplateHtml(title, body) {
 export function generateIndexHtml(title, categories, slugs) {
   const html = `
     <section class="index">
-      <h1>spurningavefur vals</h1>
-      <p>hér má finna alls kyns spurningar! veldu frá</p>
+      <h1>Spurningavefur Vals</h1>
+      <p>hér má finna alls kyns spurningar! veldu frá eftirfarandi flokkum</p>
       <ul>
         ${categories.map((category, i) => `
           <li><a href="${slugs[i]}.html">${category}</a></li>

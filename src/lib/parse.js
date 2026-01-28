@@ -9,13 +9,13 @@ export function parseLine(line) {
     let temp = split[4];
     if (split[6]) {
       temp = split[4].concat(",", split[5]);
-        split[5] = split[6]
+      split[5] = split[6]
     }
     split[4] = temp.substring(1, temp.length - 1)
       .replace("\"\"", "\"").replace("\"\"", "\"");
   }
 
-  if (!split[5]) {
+  if (!split[0] | !split[2] | !split[4] | !split[5]) {
     return null;
   }
 
