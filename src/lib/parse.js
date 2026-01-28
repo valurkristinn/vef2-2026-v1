@@ -1,20 +1,22 @@
-
-
-
 export function parseLine(line) {
   if (line.substring(0, 1) === "") {
     return null;
   }
 
   const split = line.split(",");
-  const testSplit = line.split(",")
 
-  if (testSplit[4].substring(0, 1) === "\"") {
-    const temp = testSplit[4].concat(",", testSplit[5]);
-    split[4] = temp
-      .substring(1, temp.length - 1)
-      .replace("\"\"", "\"");
-    split[5] = split[6]
+  if (split[4].substring(0, 1) === "\"") {
+    let temp = split[4];
+    if (split[6]) {
+      temp = split[4].concat(",", split[5]);
+        split[5] = split[6]
+    }
+    split[4] = temp.substring(1, temp.length - 1)
+      .replace("\"\"", "\"").replace("\"\"", "\"");
+  }
+
+  if (!split[5]) {
+    return null;
   }
 
   const q = {

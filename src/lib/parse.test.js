@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { describe, it } from 'node:test';
-import { parseQuestions,parseLine } from './parse.js';
+import { parseLine } from './parse.js';
 
 describe('parse', () => {
   describe('parseLine', () => {
@@ -11,15 +11,15 @@ describe('parse', () => {
     })
     
     it('should parse text that contains " correctly', () => {
-      const line = '5,,3,,"Á hvaða eyju á Hawaii er ""Pearl Harbor""",Oahu'
+      const line = '3,,2,,"Hver skrifaði ""A Tale of Two Cities""",Charles Dickens'
       const result = parseLine(line);
-      assert.strictEqual(result.question, 'Á hvaða eyju á Hawaii er "Pearl Harbor"')
+      assert.strictEqual(result.question, 'Hver skrifaði "A Tale of Two Cities"')
     })
 
     it('should parse the empty string and return null', () => {
       const line = ''
       const result = parseLine(line);
-      assert.strictEqual(result, 'null')
+      assert.strictEqual(result, null)
 
     })
   })
