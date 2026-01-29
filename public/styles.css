@@ -26,10 +26,6 @@ nav {
   left: calc(50vw - min(300px, 45vw));
   z-index: 10;
   background-color: white;
-
-  a::before {
-    content: "←";
-  }
 }
 
 a {

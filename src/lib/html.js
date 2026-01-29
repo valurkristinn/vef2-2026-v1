@@ -54,7 +54,7 @@ export function generateQuestionCardHtml(q) {
 export function generateCategoryIndexHtml(categoryTitle, questions) {
   const html = `
         <nav>
-          <a href="index.html" class="back"> Til baka</a>
+          <a href="index.html" class="back">← Til baka</a>
           <div>
             <label for="search">Leita</label>
             <input id="search" type="text" placeholder="1-3" autocomplete='off' />
