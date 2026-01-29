@@ -19,7 +19,7 @@
     "test:coverage": "node --test --experimental-test-coverage --experimental-test-module-mocks"
   },
   "keywords": [],
-  "author": "",
+  "author": "valurkristinn",
   "license": "ISC",
   "devDependencies": {
     "@eslint/css": "^0.14.1",

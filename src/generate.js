@@ -31,6 +31,7 @@ const categorySlugs = categories.map((s) =>
     .replace(/ö/g, "o"),
 );
 
+
 // stokkunarfall fengið af stack overflow
 //
 // Source - https://stackoverflow.com/a
@@ -47,6 +48,7 @@ function fy(a, b, c, d) {
       (a[b] = d));
 }
 
+
 async function main() {
   // búa til output möppu
   await fs.mkdir(TARGET_DIR, { recursive: true });
@@ -55,11 +57,11 @@ async function main() {
   const content = await fs.readFile("./questions.csv", "utf-8");
   const questions = parseQuestions(content);
 
-  // parse index html
+  // parse-ar index html
   const indexOutput = generateIndexHtml("Spurningavefur",categories, categorySlugs);
   fs.writeFile("./dist/index.html", indexOutput, "utf-8");
 
-  // parse categories html
+  // parse-ar flokka html
   for (let i = 0; i < categories.length; i++) {
     const categoryQuestions = questions.filter(
       (q) => q.categoryNumber === i + 1 + "",

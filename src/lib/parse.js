@@ -30,16 +30,8 @@ export function parseLine(line) {
   return q;
 }
 
-
-function parseContent(content) {
+export function parseQuestions(content) {
   const lines = content.split('\n');
   const questions = lines.map(parseLine).filter(q => q !== null);;
   return questions;
 }
-
-
-export function parseQuestions(content) {
-  return parseContent(content);
-}
-
-

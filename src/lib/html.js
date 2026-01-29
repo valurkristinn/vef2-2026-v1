@@ -1,13 +1,15 @@
-function generateTemplateHtml(title, body) {
+export function generateTemplateHtml(title, body) {
   return `
     <!DOCTYPE html>
     <html lang="is">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&disgf play=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="styles.css" />
         <script type="module" src="scripts.js"></script>
         <title>${title}</title>
@@ -33,7 +35,7 @@ export function generateIndexHtml(title, categories, slugs) {
   return generateTemplateHtml(title, html);
 }
 
-function generateQuestionCardHtml(q) {
+export function generateQuestionCardHtml(q) {
   return `
   <button type="button" class="card" aria-label="Snúa við">
     <div class="card-front">
