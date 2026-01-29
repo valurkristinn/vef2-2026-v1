@@ -8,7 +8,7 @@ export function generateTemplateHtml(title, body) {
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&disgf play=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="styles.css" />
         <script type="module" src="scripts.js"></script>
@@ -37,7 +37,7 @@ export function generateIndexHtml(title, categories, slugs) {
 
 export function generateQuestionCardHtml(q) {
   return `
-    <div>
+    <article>
       <button type="button" class="card"  aria-label="Snúa við">
         <div class="card-front">
           <h4>Erfiðleikastig: ${q.difficulty}</h4>
@@ -53,7 +53,7 @@ export function generateQuestionCardHtml(q) {
         <button>Rétt</button>
         <button>Rangt</button>
       </div>
-    </div>
+    </article>
     `;
 }
 

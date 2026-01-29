@@ -18,7 +18,7 @@ const notFound = document.querySelector(".error");
 
 const selectValues = ["Erfiðleikastig", "Gæði"]
 
-export function filter() {
+function filter() {
   for (const card of cards) {
     card.parentElement.style.display = "none"
   }
@@ -68,11 +68,10 @@ function disableButtons(buttons) {
   buttons[0].disabled = true;
   buttons[1].disabled = true;
   counter.innerText = correct + "/" + incorrect;
-  console.log("click")
 }
 
 
-for (let container of buttonsContainers) {
+for (const container of buttonsContainers) {
   const buttons = container.querySelectorAll('button')
   buttons[0].addEventListener('click', () => {
     buttons[0].style["border-color"] = "green";

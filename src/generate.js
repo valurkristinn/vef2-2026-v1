@@ -34,19 +34,14 @@ const categorySlugs = categories.map((s) =>
 
 // stokkunarfall fengið af stack overflow
 //
-// Source - https://stackoverflow.com/a
+// Source - https://stackoverflow.com/a/25984542
 // Posted by cocco, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-01-26, License - CC BY-SA 3.0
+// Retrieved 2026-01-29, License - CC BY-SA 3.0
 
-function fy(a, b, c, d) {
-  //array,placeholder,placeholder,placeholder
-  c = a.length;
-  while (c)
-    ((b = (Math.random() * (--c + 1)) | 0),
-      (d = a[c]),
-      (a[c] = a[b]),
-      (a[b] = d));
+function fy(a, b, c, d) {//array,placeholder,placeholder,placeholder
+  c = a.length; while (c) b = Math.random() * c-- | 0, d = a[c], a[c] = a[b], a[b] = d
 }
+
 
 
 async function main() {
@@ -58,7 +53,7 @@ async function main() {
   const questions = parseQuestions(content);
 
   // parse-ar index html
-  const indexOutput = generateIndexHtml("Spurningavefur",categories, categorySlugs);
+  const indexOutput = generateIndexHtml("Spurningavefur", categories, categorySlugs);
   fs.writeFile("./dist/index.html", indexOutput, "utf-8");
 
   // parse-ar flokka html

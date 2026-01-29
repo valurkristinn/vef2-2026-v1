@@ -4,8 +4,8 @@ body {
 }
 
 main {
-  width: min(90vw, 600px);
-  margin-left: calc(50vw - min(300px, 45vw));
+  width: min(95vw, 600px);
+  margin-left: calc(50vw - min(300px, 47.5vw));
   margin-top: 100px;
 }
 
@@ -18,14 +18,24 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding: 10px 0;
   position: fixed;
-  padding: 12px;
   top: 0;
-  width: min(90vw, 600px);
-  left: calc(50vw - min(300px, 45vw));
+  left: 0;
+  width: min(95vw, 600px);
+  left: calc(50vw - min(300px, 47.5vw));
   z-index: 10;
   background-color: white;
+
+  div {
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 60%;
+  }
+
+
 }
 
 a {
@@ -35,6 +45,11 @@ a {
 
 a:hover {
   color: black;
+}
+
+
+input {
+  max-width: 30%;
 }
 
 input,
@@ -150,11 +165,11 @@ select:active {
     background-color: rgba(0, 0, 0, 0.04);
   }
 
-  button:active{
+  button:active {
     background-color: rgba(0, 0, 0, 0.08);
   }
 
-  button:disabled{
+  button:disabled {
     background-color: white;
   }
 }

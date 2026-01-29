@@ -15,7 +15,7 @@ export function parseLine(line) {
       .replace("\"\"", "\"").replace("\"\"", "\"");
   }
 
-  if (!split[0] | !split[2] | !split[4] | !split[5]) {
+  if (!split[0] || !split[2] || !split[4] || !split[5]) {
     return null;
   }
 
