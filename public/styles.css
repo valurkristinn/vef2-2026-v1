@@ -20,7 +20,7 @@ nav {
   align-items: center;
 
   position: fixed;
-  padding: 15px;
+  padding: 12px;
   top: 0;
   width: min(90vw, 600px);
   left: calc(50vw - min(300px, 45vw));
@@ -125,4 +125,36 @@ select:active {
 
 .card.flipped .card-back {
   transform: rotateX(360deg);
+}
+
+.card-container.hidden {
+  display: none;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  justify-content: space-around;
+  gap: 10px;
+
+  button {
+    border: solid 1px black;
+    background-color: white;
+    font-size: 15px;
+    padding: 8px 30px;
+    border-radius: 10px;
+  }
+
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  button:active{
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+
+  button:disabled{
+    background-color: white;
+  }
 }
