@@ -24,7 +24,7 @@ export function generateIndexHtml(title, categories, slugs) {
   const html = `
     <section class="index">
       <h1>Spurningavefur Vals</h1>
-      <p>hér má finna alls kyns spurningar! veldu frá eftirfarandi flokkum</p>
+      <p>Hér má finna alls kyns spurningar! veldu frá eftirfarandi flokkum</p>
       <ul>
         ${categories.map((category, i) => `
           <li><a href="${slugs[i]}.html">${category}</a></li>
@@ -40,6 +40,7 @@ export function generateQuestionCardHtml(q) {
   <button type="button" class="card" aria-label="Snúa við">
     <div class="card-front">
       <h4>Erfiðleikastig: ${q.difficulty}</h4>
+      <h5 style="display:none">Gæði: ${q.quality}</h5>
       <h3>${q.question}?</h3>
       <p>Smelltu til að sjá svarið!</p>
     </div>
@@ -52,10 +53,21 @@ export function generateQuestionCardHtml(q) {
 
 export function generateCategoryIndexHtml(categoryTitle, questions) {
   const html = `
-        <a href="index.html" class="back"> Til baka</a>
+        <nav>
+          <a href="index.html" class="back"> Til baka</a>
+          <div>
+            <label for="search">Leita</label>
+            <input id="search" type="text" placeholder="1-3" autocomplete='off' />
+            <select>
+              <option value="0">Erfiðleikastig</option>
+              <option value="1">Gæði</option>
+            </select>
+          </div>
+        </nav>
         <h1>${categoryTitle}</h1>
         <section class="questions">
           ${questions.map((q) => generateQuestionCardHtml(q)).join("")}
+          <span>Ekkert fannst með þessum leitarskilyrðum!</span>
         </section>
     `;
 

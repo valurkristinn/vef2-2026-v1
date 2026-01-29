@@ -5,7 +5,7 @@ body {
 
 main {
   width: min(90vw, 600px);
-  margin-left: calc(50vw - min(300px,45vw));
+  margin-left: calc(50vw - min(300px, 45vw));
   margin-top: 100px;
 }
 
@@ -14,23 +14,60 @@ main {
   font-optical-sizing: auto;
 }
 
-.back {
-  color: black;
-  text-decoration: none;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   position: fixed;
-  background-color: white;
-  z-index: 10;
   padding: 15px;
   top: 0;
+  width: min(90vw, 600px);
+  left: calc(50vw - min(300px, 45vw));
+  z-index: 10;
+  background-color: white;
+
+  a::before {
+    content: "←";
+  }
 }
 
-.back:hover {
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
   color: black;
 }
 
-.back::before {
-  content: "←";
+input,
+select,
+label {
+  font-size: 15px;
+  padding: 5px 10px;
 }
+
+input,
+select {
+  border: solid 1px black;
+  background-color: white;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:hover,
+select:hover {
+  border: solid 1px black;
+  outline: none;
+}
+
+input:active,
+select:active {
+  outline: none;
+}
+
+
 
 
 .questions {
